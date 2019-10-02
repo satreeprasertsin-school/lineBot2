@@ -20,10 +20,8 @@ def callback():
     json_line = request.get_json()
     json_line = json.dumps(json_line)
     decoded = json.loads(json_line)
-    #user = decoded["events"][0]['replyToken']
-    user = decoded['originalDetectIntenRequest']['payload']['data']['replyToken']
-    #userText = decoded["events"][0]['message']['text']
-    userText = decoded['queryResult']['intent']['displayName']
+    user = decoded['originalDetectIntenRequest']['payload']['data']['replyToken']   #user = decoded["events"][0]['replyToken']
+    userText = decoded['queryResult']['intent']['displayName']                      #userText = decoded["events"][0]['message']['text']
     #sendText(user,userText)
     if (userText == 'สวัสดี') :
         sendText(user,'สวัสดีจ้า')
